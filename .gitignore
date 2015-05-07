@@ -1,0 +1,6 @@
+.SRCINFO
+*.swp
+pathpicker-*.tar.*
+PathPicker/
+pkg/
+src/
