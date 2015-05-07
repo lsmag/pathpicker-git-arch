@@ -2,7 +2,7 @@
 
 _pkgname=pathpicker
 pkgname=${_pkgname}-git
-pkgver=0.r87.e060419
+pkgver=0.r93.af3db8a
 pkgrel=1
 pkgdesc='Facebook PathPicker is a simple command line tool that solves the perpetual problem of selecting files out of bash output.'
 url='https://github.com/facebook/PathPicker'
@@ -24,9 +24,5 @@ package() {
   mv $srcdir/PathPicker $pkgdir/opt
 
   mkdir -p $pkgdir/usr/bin
-  echo "Currently it seems PathPicker has a problem with linux symlinks,"
-  echo "so please add '/opt/PathPicker/' to your \$PATH to use fpp"
-
-  # TODO: use symlink
-  # ln -s "$pkgdir/opt/PathPicker/fpp" "$pkgdir/usr/bin/fpp"
+  ln -s "/opt/PathPicker/fpp" "$pkgdir/usr/bin/fpp"
 }
